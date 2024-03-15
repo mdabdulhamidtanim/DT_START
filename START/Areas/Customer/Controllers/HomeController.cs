@@ -1,9 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
-using START.Models;
+using Start.Models;
 using System.Diagnostics;
 
-namespace START.Controllers
+namespace Start.Areas.Customer.Controllers
 {
+    [Area("Customer")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
