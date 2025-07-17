@@ -9,7 +9,7 @@ namespace Start.DataAccess.Repository.IRepository
 {
     public interface IProductRepository:IRepository<Product>
     {
-     void update(Product Obj);
-        void save();
+     void Update(Product Obj);
+        
     }
 }
