@@ -1,4 +1,6 @@
-﻿using Start.DataAccess.Data;
+﻿using BulkyBook.DataAccess.Repository;
+using BulkyBook.DataAccess.Repository.IRepository;
+using Start.DataAccess.Data;
 using Start.DataAccess.Repository.IRepository;
 using System;
 using System.Collections.Generic;
@@ -13,6 +15,7 @@ namespace Start.DataAccess.Repository
     {
         private ApplicationDbContext _db;
         public ICategoryRepository Category { get;private set; }
+        public ICompanyRepository Company { get; private set; }
 
         public IProductRepository Product { get; private set; }
         public UnitOfWork(ApplicationDbContext db)
@@ -20,6 +23,7 @@ namespace Start.DataAccess.Repository
             _db = db;
             Category = new CategoryRepository(_db);
             Product = new ProductRepository(_db);
+            Company = new CompanyRepository(_db);
         }
         public void Save()
         {

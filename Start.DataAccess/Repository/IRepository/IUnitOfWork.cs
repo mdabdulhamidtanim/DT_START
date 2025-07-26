@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BulkyBook.DataAccess.Repository.IRepository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ namespace Start.DataAccess.Repository.IRepository
     {
         ICategoryRepository Category { get; }
         IProductRepository Product { get; }
+        ICompanyRepository Company { get; }
         void Save();
     }
 }

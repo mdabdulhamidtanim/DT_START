@@ -5,10 +5,14 @@ using Start.DataAccess.Repository;
 using Start.DataAccess.Repository.IRepository;
 using Start.Models;
 using Start.Models.ViewModels;
+using Start.Utility;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace Start.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    //[Authorize(Roles = SD.Role_Admin)]
     public class ProductController : Controller
     {
         private readonly IUnitOfWork _unitofwork;
