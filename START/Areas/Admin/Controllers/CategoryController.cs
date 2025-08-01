@@ -6,7 +6,7 @@ using Start.Models;
 using Start.Utility;
 namespace Start.Areas.Admin.Controllers
 {
-    [Area("Admin")]
+    [Area("admin")]
     //[Authorize(Roles = SD.Role_Admin)]
     public class CategoryController : Controller
     {

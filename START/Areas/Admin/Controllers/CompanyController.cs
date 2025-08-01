@@ -10,11 +10,11 @@ using Start.DataAccess.Repository.IRepository;
 using System.Collections.Generic;
 using System.Data;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
-using BulkyBook.Models;
+using Start.Models;
 
-namespace BulkyBookWeb.Areas.Admin.Controllers
+namespace Start.Areas.Admin.Controllers
 {
-    [Area("Admin")]
+    [Area("admin")]
     //[Authorize(Roles = SD.Role_Admin)]
     public class CompanyController : Controller
     {

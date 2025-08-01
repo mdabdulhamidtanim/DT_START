@@ -1,4 +1,4 @@
-﻿using BulkyBook.Models;
+﻿using Start.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -9,21 +9,30 @@ namespace Start.DataAccess.Data
 {
     public class ApplicationDbContext : IdentityDbContext<IdentityUser>
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext>options):base(options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
+
         }
-        public DbSet<Category>Categories { get; set; }
-        public DbSet<Product>Products { get; set; }
+
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Product> Products { get; set; }
         public DbSet<Company> Companies { get; set; }
+        public DbSet<ShoppingCart> ShoppingCarts { get; set; }
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public DbSet<OrderHeader> OrderHeaders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
             base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<Category>().HasData(
                 new Category { Id = 1, Name = "Action", DisplayOrder = 1 },
                 new Category { Id = 2, Name = "SciFi", DisplayOrder = 2 },
                 new Category { Id = 3, Name = "History", DisplayOrder = 3 }
                 );
+
             modelBuilder.Entity<Company>().HasData(
                 new Company
                 {
@@ -57,6 +66,7 @@ namespace Start.DataAccess.Data
                 }
                 );
 
+
             modelBuilder.Entity<Product>().HasData(
                 new Product
                 {
@@ -69,8 +79,8 @@ namespace Start.DataAccess.Data
                     Price = 90,
                     Price50 = 85,
                     Price100 = 80,
-                    CategoryId =1,
-                    ImageUrl =""
+                    CategoryId = 1,
+                    ImageUrl = ""
                 },
                 new Product
                 {
@@ -83,7 +93,7 @@ namespace Start.DataAccess.Data
                     Price = 30,
                     Price50 = 25,
                     Price100 = 20,
-                    CategoryId = 2,
+                    CategoryId = 1,
                     ImageUrl = ""
                 },
                 new Product
@@ -97,7 +107,7 @@ namespace Start.DataAccess.Data
                     Price = 50,
                     Price50 = 40,
                     Price100 = 35,
-                    CategoryId = 3,
+                    CategoryId = 1,
                     ImageUrl = ""
                 },
                 new Product
@@ -111,7 +121,7 @@ namespace Start.DataAccess.Data
                     Price = 65,
                     Price50 = 60,
                     Price100 = 55,
-                    CategoryId = 3,
+                    CategoryId = 2,
                     ImageUrl = ""
                 },
                 new Product
@@ -125,7 +135,7 @@ namespace Start.DataAccess.Data
                     Price = 27,
                     Price50 = 25,
                     Price100 = 20,
-                    CategoryId = 3,
+                    CategoryId = 2,
                     ImageUrl = ""
                 },
                 new Product
@@ -141,8 +151,8 @@ namespace Start.DataAccess.Data
                     Price100 = 20,
                     CategoryId = 3,
                     ImageUrl = ""
-                });
-
+                }
+                );
         }
     }
 }

@@ -11,7 +11,7 @@ using System.Data;
 
 namespace Start.Areas.Admin.Controllers
 {
-    [Area("Admin")]
+    [Area("admin")]
     //[Authorize(Roles = SD.Role_Admin)]
     public class ProductController : Controller
     {

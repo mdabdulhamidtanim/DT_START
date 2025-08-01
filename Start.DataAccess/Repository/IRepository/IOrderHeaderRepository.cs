@@ -1,5 +1,4 @@
 ﻿using Start.Models;
-using Start.DataAccess.Repository.IRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace Start.DataAccess.Repository.IRepository
 {
-    public interface ICompanyRepository : IRepository<Company>
+    public interface IOrderHeaderRepository : IRepository<OrderHeader>
     {
-        void Update(Company obj);
+        void Update(OrderHeader obj);
+
+        void UpdateStatus(int id, string orderStatus, string? paymentStatus = null);
     }
 }
